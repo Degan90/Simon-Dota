@@ -1,0 +1,96 @@
+html{
+    min-height: 100%;}
+body{
+    background-image: url("img/jugg.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    height: 100%;
+   
+}
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 30%;
+    justify-content:flex-end ;
+    margin-top: 20%;
+    margin-left: 60%;
+}
+.btn{
+    height: 200px;
+    width: 300px;
+    border-radius: 20%;
+    margin: 25px;
+    border: 10px solid rgb(50, 18, 0);
+
+}
+
+
+.playButton{
+   margin-top: 50px;
+}
+.SR{
+    margin: 20px;
+    margin-left: 70%;
+}
+
+.start {
+    
+    box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #e3ffa6 5%, #9ba892 100%);
+	background-color:#e3ffa6;
+	border-radius:33px;
+	border:1px solid #b2b8ad;
+	display:inline-block;
+	cursor:pointer;
+	color:#757d6f;
+	font-family:Georgia;
+	font-size:28px;
+	font-weight:bold;
+	padding:24px 66px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e2ffba;
+  }
+  .start:hover{
+    
+        box-shadow:inset 0px 0px 14px -3px #f2fadc;
+        background:linear-gradient(to bottom, #e3ffa6 5%, #9ba892 100%);
+        background-color:#e3ffa6;
+        border-radius:33px;
+        border:1px solid #b2b8ad;
+        display:inline-block;
+        cursor:pointer;
+        color:#757d6f;
+        font-family:Georgia;
+        font-size:28px;
+        font-weight:bold;
+        padding:24px 66px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #e2ffba;
+    }
+    .start:hover {
+        background:linear-gradient(to bottom, #9ba892 5%, #e3ffa6 100%);
+        background-color:#9ba892;
+    }
+  .start:active{
+    position:relative;
+	top:1px;
+  }
+.weaver{
+    background-image: url("img/weaver-2.jpg");
+    background-size: cover;
+}
+
+.CM{
+    background-image: url("img/cm.jpg");
+    background-size: cover;
+}
+.tuskar{
+    background-image: url("img/tuskar.jpg");
+    background-size: cover;
+}
+
+.slark{
+    background-image: url("img/slark.jpg");
+    background-size: cover;
+}
