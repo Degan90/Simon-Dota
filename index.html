@@ -4,42 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
     <title>Simon-Dota2</title>
 </head>
 <body>
-    
+    <h1 id="score-title"></h1>
   <div class="allButtons">
     <div class="playButton">
         <div>
             <button  type="button" id="start" class="SR start">Start</button>
         </div>
         <div>
-            <button type="button" id="replay" class="SR replay">Replay</button>
+            <button type="button" id="replay" class="SR replay btn btn-labeled btn-success">Replay</button>
         </div>
     </div>
 
     <div class="container">
         <div>
-            <button type="button" id="tuskar" class="btn tuskar"></button>
+            <button type="button" id="tuskar" class="btns tuskar"></button>
         </div>
         <div>
-            <button type="button" id="weaver" class="btn weaver"></button>
+            <button type="button" id="weaver" class="btns weaver"></button>
         </div>
         <div>
-            <button type="button" id="CM" class="btn CM"></button>
+            <button type="button" id="cm" class="btns CM"></button>
         </div>
         <div>
-            <button type="button" id="slark" class="btn slark"></button>
+            <button type="button" id="slark" class="btns slark"></button>
         </div>
     </div>
   </div>   
 
- 
-
-
-
-
-    <script src="script.js"></script>
+  
+  <script src="script.js"></script>
 </body>
 </html>

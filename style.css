@@ -1,8 +1,11 @@
+
+
 html{
     min-height: 100%;}
 body{
     background-image: url("img/jugg.jpg");
     background-size: cover;
+
     background-repeat:no-repeat;
     height: 100%;
    
@@ -16,22 +19,27 @@ body{
     margin-top: 20%;
     margin-left: 60%;
 }
-.btn{
-    height: 200px;
-    width: 300px;
+.btns{
+    height: 230px;
+    width: 330px;
     border-radius: 20%;
     margin: 25px;
     border: 10px solid rgb(50, 18, 0);
+    
 
 }
 
 
 .playButton{
-   margin-top: 50px;
+   margin-top: 80px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   width: 30%;
+  margin-left: 55%;
 }
 .SR{
     margin: 20px;
-    margin-left: 70%;
+   
 }
 
 .start {
@@ -94,3 +102,32 @@ body{
     background-image: url("img/slark.jpg");
     background-size: cover;
 }
+
+.replay{
+    border-radius: 100%;
+    
+    width: 100px;
+    height: 100px;
+    border-color: rgb(57, 97, 16);
+    margin-top: 4%;
+    
+}
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+  }
+ #score-title{
+     margin-left: 40%;
+     color: cornsilk;
+     padding-top: 100px;
+     font-size: 50px;
+     font-family: 'ZCOOL KuaiLe', cursive
+ }
+
+ .game-over{
+    background-image: url("img/jugg-lost.jpg");
+    opacity: 0.8;   
+ }
+
+                
