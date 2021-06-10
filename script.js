@@ -1,20 +1,20 @@
 const buttonHeros = ["slark","cm","tuskar","weaver"];
-let gamePattern = [];
-let userClickedPattern = [];
+
 const startButton = document.querySelector("#start")
 const levelDisplay =document.querySelector("#score-title")
 const replayButton = document.querySelector("#replay")
+const heroButtons = document.getElementsByClassName("container")
+const extraSound = document.querySelector("#extra")
+let gamePattern = [];
+let userClickedPattern = [];
+
+
 
 let level = 0 ;
 let started = false;
 const startGame = ()=>{
-    if(!started){
         levelDisplay.innerText = "Level    " + level;
         nextSequence();
-        started=true;
-
-    }
-    
 }
 startButton.addEventListener("click",startGame)
 
@@ -25,19 +25,11 @@ const playSound = (name)=>{
 }
 
 
-// $(".btns").click(function(){
-//     let userChosenHero = $(this).attr("id");
-//     userClickedPattern.push(userChosenHero);
-//     console.log(userClickedPattern)
-//     playSound(userChosenHero);
-    
-// });
+
 const userClicked = (event)=>{
-    // event.preventDefault();
+    event.preventDefault();
     let userChosenHero = event.target.id;
-    console.log(userChosenHero)
     userClickedPattern.push(userChosenHero); 
-    console.log(userClickedPattern)
     playSound(userChosenHero)
     animatePress(userChosenHero)
     //Call checkAnswer() after a user has clicked and chosen their answer,
@@ -51,79 +43,85 @@ document.querySelector(".container").addEventListener("click",userClicked)
 
 const checkAnswer = (currentLevel) =>{
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-        console.log("success");
-
         if (userClickedPattern.length === gamePattern.length){
-
             setTimeout(function () {
               nextSequence();
             }, 1000);
     
           }
     }else{
-        console.log('wrong')
         playSound("jugg")
-
         levelDisplay.innerText = "Game Over , Press Replay Button "
         document.querySelector("body").classList.add("game-over");
-        
-        startOver();
-    }
-
+        startButton.disabled = true;
+        heroButtons.disabled = true;  
+    }   
 }
 
-
-
-
 const nextSequence = () =>{
-
     userClickedPattern=[];
-
     level++;
-
-
     levelDisplay.innerText = "Level    " + level;
     
-
-  
     let randomNumber = Math.floor(Math.random()*4);
     let randomChosenHero = buttonHeros[randomNumber];
     
     gamePattern.push(randomChosenHero);
     
     $("#"+randomChosenHero).fadeIn(100).fadeOut(100).fadeIn(100);
-    // document.querySelector("#"+randomChosenHero)
-    
+    startButton.disabled = true;
+
     playSound(randomChosenHero);
-    
+    fiveScore();
+    tenScore();
 }
-// nextSequence();
+
+const fiveScore = () =>{
+    if(level === 5){
+        setTimeout(() => {
+            playSound("dominating")
+        }, 1000);
+        
+        extraSound.innerText="DOMINATING"
+        setTimeout(() => {
+            extraSound.innerText="" 
+        }, 5000);
+        
+    }
+}
+
+const tenScore = () =>{
+    if(level === 10){
+        setTimeout(() => {
+            playSound("godlike") 
+        }, 1000);
+        extraSound.innerText="GOD LIKE"
+        setTimeout(() => {
+            extraSound.innerText=""
+        },5000);
+    }
+}
 
 
-
-
-
-
-const animatePress = (currentHero) =>{
-    console.log(document.querySelector("#"+currentHero))
-    document.querySelector("#"+currentHero).classList.add("pressed");
-
+const animatePress = (x) =>{
+    document.querySelector("#"+x).classList.add("pressed");
     setTimeout(() => {
-        document.querySelector("#"+currentHero).classList.remove("pressed")
+        document.querySelector("#"+x).classList.remove("pressed")
     }, 100);
 }
+
 
 const startOver = () =>{
   level = 0;
   gamePattern = [];
-  started = false;
+  document.querySelector("body").classList.remove("game-over");
+  startButton.disabled = false;
+  levelDisplay.innerText = ""
+//   playSound("music")
+
+
+
 }
 
 replayButton.addEventListener("click", startOver)
-    
-
-    
-
-
-
-
+startOver();
