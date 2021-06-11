@@ -20,6 +20,7 @@ let level = 0 ;
 let started = false;
 
 
+
 const play = ()=>{
     const audio = document.querySelector("audio");
     audio.play();
@@ -79,7 +80,10 @@ const checkAnswer = (currentLevel) =>{
     
           }
     }else{
-        playSound("jugg")
+        setTimeout(() => {
+            playSound("jugg")
+        }, 1000);
+        
         levelDisplay.innerText = "Game Over , Press Replay Button "
         document.querySelector("body").classList.add("game-over");
         startButton.disabled = true;
