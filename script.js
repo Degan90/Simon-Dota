@@ -6,6 +6,8 @@ const replayButton = document.querySelector("#replay")
 const heroButtons = document.querySelectorAll(".btns")
 const extraSound = document.querySelector("#extra")
 const high = document.querySelector("#high")
+const musicBtn = document.querySelector("#musicBtn")
+const musicOff= document.querySelector("#musicOff")
 let gamePattern = [];
 let userClickedPattern = [];
 
@@ -18,8 +20,24 @@ let level = 0 ;
 let started = false;
 
 
+const play = ()=>{
+    const audio = document.querySelector("audio");
+    audio.play();
+}
+musicBtn.addEventListener("click",play)
+
+const pause = ()=>{
+    const audio = document.querySelector("audio");
+    audio.pause();
+}
+musicOff.addEventListener("click",pause)
+
+
+
 const startGame = ()=>{
         levelDisplay.innerText = "Level    " + level;
+        musicBtn.disabled=true;
+        pause();
         nextSequence();
 }
 startButton.addEventListener("click",startGame)
@@ -75,10 +93,11 @@ const nextSequence = () =>{
     userClickedPattern=[];
     level++;
     levelDisplay.innerText = "Level    " + level;
-    console.log(level,highestLevel)
     if(level>highestLevel){
-        high.innerText=level
-    }
+        high.innerText=level;
+        }
+        
+    
     let randomNumber = Math.floor(Math.random()*4);
     let randomChosenHero = buttonHeros[randomNumber];
     
@@ -128,19 +147,16 @@ const animatePress = (x) =>{
 
 
 const startOver = () =>{
-//   highestLevel = userClickedPattern.length
+
   level = 0;
   gamePattern = [];
   document.querySelector("body").classList.remove("game-over");
   startButton.disabled = false;
   heroButtons.forEach(element => {
     element.disabled = false;
+    musicBtn.disabled=false;
 });
   levelDisplay.innerText = ""
-//   playSound("music")
-
-
-
 }
 
 replayButton.addEventListener("click", startOver)

@@ -16,7 +16,7 @@ body{
     grid-template-columns: 1fr 1fr;
     width: 30%;
     justify-content:flex-end ;
-    margin-top: 17%;
+    
     margin-left: 60%;
 
 }
@@ -36,6 +36,7 @@ body{
     
     margin: 20px;
 }
+
 .playButton{
     
     display: flex;
@@ -44,6 +45,14 @@ body{
     
     
     
+}
+label{
+    font-family: 'ZCOOL KuaiLe', cursive;
+    color: rgb(2, 60, 169);
+    font-size: 30px;
+}
+#allMusic{
+    margin-left: 80%;
 }
 #highest{
     text-align: end;
@@ -124,7 +133,7 @@ body{
         width: 70%;
         border-radius: 30%;
     }
-   
+
  }
  @media screen and (max-width:400px){
     html{
@@ -173,7 +182,7 @@ body{
         display: flex;
         flex-direction: column;
     }
-     
+   
  }
  
 #extra{
