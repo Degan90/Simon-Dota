@@ -12,15 +12,8 @@ let gamePattern = [];
 let userClickedPattern = [];
 
 let highestLevel = 0;
-
-
-
-
 let level = 0 ;
 let started = false;
-
-
-
 const play = ()=>{
     const audio = document.querySelector("audio");
     audio.play();
@@ -32,9 +25,6 @@ const pause = ()=>{
     audio.pause();
 }
 musicOff.addEventListener("click",pause)
-
-
-
 const startGame = ()=>{
         levelDisplay.innerText = "Level    " + level;
         musicBtn.disabled=true;
@@ -42,14 +32,11 @@ const startGame = ()=>{
         nextSequence();
 }
 startButton.addEventListener("click",startGame)
-
-
+  
 const playSound = (name)=>{
     let audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
 }
-
-
 
 const userClicked = (event)=>{
     event.preventDefault();
@@ -67,9 +54,6 @@ const userClicked = (event)=>{
     checkAnswer(userClickedPattern.length-1)
 }
 document.querySelector(".container").addEventListener("click",userClicked)
-
-
-
 
 const checkAnswer = (currentLevel) =>{
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
